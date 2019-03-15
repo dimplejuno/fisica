@@ -1,7 +1,7 @@
 import fisica.*; 
 
 FWorld world; 
-PImage background; // kenney 
+PImage background;
 PImage angrybird;
 PImage pig;
 
@@ -11,9 +11,9 @@ void setup() {
 
   Fisica.init(this);  // Fisica Initialization
   world = new FWorld();
-  
-  FLine  line = new FLine(0,height,width,height);
-  world.add(line);
+  world.setEdges();
+  world.remove(world.right);
+  world.remove(world.left);
   
   background = loadImage("colored_desert.png");
   
